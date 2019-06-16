@@ -1,7 +1,7 @@
 {
-  "name": "docz-theme-default",
-  "version": "1.0.4",
-  "description": "The default theme of docz",
+  "name": "docz-theme-bd",
+  "version": "1.0.6",
+  "description": "The bd theme of docz",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import { Logo } from '../Logo'
 import { Search } from '../Search'
 import { Menu } from './Menu'
-import { Docz } from './Docz'
+// import { Docz } from './Docz'
 import { Hamburger } from './Hamburger'
 
 import { get } from '@utils/theme'
@@ -31,7 +31,7 @@ const Wrapper = styled.div<WrapperProps>`
   z-index: 1000;
 
   ${mq({
-    position: ['absolute', 'absolute', 'absolute', 'relative'],
+    position: ['absolute', 'absolute', 'absolute', 'relative']
   })};
 
   dl {
@@ -44,8 +44,8 @@ const Wrapper = styled.div<WrapperProps>`
   }
 
   @media screen and (max-width: ${breakpoints.desktop - 1}px) {
-    transform: translateX(${p => (p.opened ? '-100%' : '0')});
-    position: ${p => (p.opened ? 'auto' : 'fixed')};
+    transform: translateX(${(p) => (p.opened ? '-100%' : '0')});
+    position: ${(p) => (p.opened ? 'auto' : 'fixed')};
   }
 
   ${get('styles.sidebar')};
@@ -86,15 +86,15 @@ const Footer = styled.div`
   border-top: 1px dashed ${sidebarBorder};
 `
 
-const FooterLink = styled.a`
-  padding: 0;
-  margin: 0;
-  margin-left: 5px;
-`
+// const FooterLink = styled.a`
+//   padding: 0;
+//   margin: 0;
+//   margin-left: 5px;
+// `
 
-const FooterLogo = styled(Docz)<{ width: number }>`
-  fill: ${sidebarText};
-`
+// const FooterLogo = styled(Docz)<{ width: number }>`
+//   fill: ${sidebarText};
+// `
 
 interface OpenProps {
   opened: boolean
@@ -102,7 +102,7 @@ interface OpenProps {
 
 const ToggleBackground = styled.div<OpenProps>`
   content: '';
-  display: ${p => (p.opened ? 'none' : 'block')};
+  display: ${(p) => (p.opened ? 'none' : 'block')};
   position: fixed;
   background-color: rgba(0, 0, 0, 0.4);
   width: 100vw;
@@ -140,7 +140,7 @@ export const Sidebar: SFC = () => {
 
   const handleSidebarToggle = () => {
     if (isDesktop) return
-    setHidden(s => !s)
+    setHidden((s) => !s)
     addOverlayClass(!hidden)
   }
 
@@ -157,7 +157,7 @@ export const Sidebar: SFC = () => {
           ) : (
             <Menus>
               {menus &&
-                menus.map(menu => (
+                menus.map((menu) => (
                   <Menu
                     key={menu.id}
                     item={menu}
@@ -168,10 +168,10 @@ export const Sidebar: SFC = () => {
             </Menus>
           )}
           <Footer>
-            Built with
-            <FooterLink href="https://docz.site" target="_blank">
+            Built with❤️
+            {/* <FooterLink href="https://docz.site" target="_blank">
               <FooterLogo width={40} />
-            </FooterLink>
+            </FooterLink> */}
           </Footer>
         </Content>
       </Wrapper>
